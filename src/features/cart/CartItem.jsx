@@ -1,16 +1,18 @@
-function CartItem({ item }) {
-  const { pizzaId, name, quantity, totalPrice } = item;
+import { formatCurrency } from "../../utilities/helpers";
 
-  return (
-    <li>
-      <p>
-        {quantity}&times; {name}
-      </p>
-      <div>
-        <p>{formatCurrency(totalPrice)}</p>
-      </div>
-    </li>
-  );
+function CartItem() {
+    //const { pizzaId, name, quantity, totalPrice } = item;
+
+    return (
+        <li>
+            <p>
+                {}&times; {name}
+            </p>
+            <div>
+                <p>{formatCurrency(1589)}</p>
+            </div>
+        </li>
+    );
 }
 
 export default CartItem;
