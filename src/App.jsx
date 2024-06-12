@@ -8,37 +8,37 @@ import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
 
 const router = createBrowserRouter([
-    {
-        element: <AppLayout />,
+  {
+    element: <AppLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/menu",
+        element: <Menu />,
+        loader: menuLoader,
         errorElement: <Error />,
-        children: [
-            {
-                path: "/",
-                element: <Home />,
-            },
-            {
-                path: "/menu",
-                element: <Menu />,
-                loader: menuLoader,
-                errorElement: <Error />,
-            },
-            {
-                path: "/cart",
-                element: <Cart />,
-            },
-            { path: "/order/new", element: <CreateOrder /> },
-            {
-                path: "/order/:orderID",
-                element: <Order />,
-                loader: orderLoader,
-                errorElement: <Error />,
-            },
-        ],
-    },
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      { path: "/order/new", element: <CreateOrder /> },
+      {
+        path: "/order/:orderId",
+        element: <Order />,
+        loader: orderLoader,
+        errorElement: <Error />,
+      },
+    ],
+  },
 ]);
 
 function App() {
-    return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
