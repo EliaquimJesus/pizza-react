@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import getOrder from "../../services/apiOrder";
+import { getOrder } from "../../services/apiRestaurant";
 
 // Test ID: IIDSAT
 
@@ -59,9 +59,6 @@ function Order() {
 
 export async function loader({ params }) {
   const order = getOrder(params.orderId);
-
-  console.log(order);
-
   return order;
 }
 
