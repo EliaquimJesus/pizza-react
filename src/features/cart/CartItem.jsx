@@ -10,7 +10,9 @@ function CartItem({ item }) {
         {quantity} &times; {name}
       </p>
       <div className="flex items-center justify-between sm:gap-6">
-        <p className="text-sm font-bold">{formatCurrency(totalPrice)}</p>
+        <p className="text-sm font-bold">
+          {totalPrice ? formatCurrency(totalPrice) : formatCurrency(0)}
+        </p>
         <Button type="small">Delete</Button>
       </div>
     </li>
