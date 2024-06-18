@@ -26,7 +26,6 @@ function MenuItem({ pizza }) {
         className={`h-24 ${soldOut ? "opacity-70 grayscale" : ""}`}
       />
       <div className="flex grow flex-col pt-0.5">
-        <input type="hidden" value={id} />
         <p className="font-medium">{name}</p>
         <p className="text-sm capitalize italic text-stone-500">
           {ingredients.join(", ")}
