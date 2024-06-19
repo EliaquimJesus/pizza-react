@@ -12,7 +12,7 @@ import {
 
 function Order() {
   const order = useLoaderData();
-  // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
+  // Everyone can search for all orders, so for privacy reasons we're gonna exclude names or address, these are only for the restaurant staff
   const {
     id,
     status,
@@ -24,7 +24,7 @@ function Order() {
   } = order;
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
-  console.log(id, cart);
+  console.log(order);
 
   return (
     <div className="space-y-8 px-4 py-6">
@@ -56,7 +56,7 @@ function Order() {
 
       <ul className="dive-stone-200 divide-y border-b border-t">
         {cart.map((item) => (
-          <OrderItem item={item} key={item.id} />
+          <OrderItem item={item} key={item.pizzaId} />
         ))}
       </ul>
 
