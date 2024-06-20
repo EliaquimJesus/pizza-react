@@ -4,10 +4,11 @@ import LinkButton from "../../ui/LinkButton";
 import CartItem from "./CartItem";
 import { clearCart, getCart } from "./cartSlice";
 import EmptyCart from "./EmptyCart";
+import { getName } from "../user/userSlice";
 
 function Cart() {
   const cart = useSelector(getCart);
-  const username = useSelector((state) => state.user.username);
+  const username = useSelector(getName);
   const dispatch = useDispatch();
 
   function handleClearCart() {
